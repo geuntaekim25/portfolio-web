@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>404 ERRER</title>
+  <link rel="icon" href="images/ico.png">
+      <meta name="theme-color" content="#106faa">
+      <link rel="stylesheet" href="css/bsod.css">
+</head>
+
+  <body>
+
+    
+  <main>
+    <header>
+      <h1 class="emotion">:(</h1>
+    </header>
+    <a class="description">Page not found.<p><span id="progress">0</span>% complete</p></a>
+    <table>
+      <tr>
+        <td><div id="qrcode" style="padding: 16px; width: 110px; height: 110px; background: #fff; display: inline-block"></div></td>
+        <td style="position: absolute; margin-top: -23px;">
+          <p style="margin-left: 8px"><small>If there is a problem with the web page, please go to the relevant Discord server and contact us.<br><a style="text-decoration:none; color: #FFF" href="https://geuntae.kr/discord">https://geuntae.kr/discord</a></small></p>        </td>
+      </tr>
+    </table>
+  </main>
+
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <script src="js/qrcode.js"></script>
+
+  <script src="js/bsod.js"></script>
+
+  <script type="text/javascript">function update_progress() {
+
+    $.ajax(
+      {
+        url: "https://api.amanoteam.com/getpercentage/",
+      }
+    ).done(function(data) {
+      document.getElementById('progress').innerHTML = data;
+    });
+    setTimeout(update_progress, 10000);
+}
+
+update_progress();</script>
+
+</html>
