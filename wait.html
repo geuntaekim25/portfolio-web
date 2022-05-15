@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wait</title>
+  <link rel="icon" href="images/ico.png">
+      <meta name="theme-color" content="#106faa">
+      <link rel="stylesheet" href="css/bsod.css">
+</head>
+
+  <body>
+
+    
+  <main>
+    <header>
+      <h1 class="emotion">:(</h1>
+    </header>
+    <a class="description">Please wait..<p></a>
+    <table>
+      <tr>
+        <td><div id="qrcode" style="padding: 16px; width: 110px; height: 110px; background: #fff; display: inline-block"></div></td>
+        <td style="position: absolute; margin-top: -23px;">
+          <p style="margin-left: 8px"><small>The corresponding menu or page is currently being prepared.<br />Please note that a notice will be posted on the Discord server when preparation is complete.<br><a style="text-decoration:none; color: #FFF" href="https://geuntae.kr/discord">https://geuntae.kr/discord</a></small></p>        </td>
+      </tr>
+    </table>
+  </main>
+
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <script src="js/qrcode.js"></script>
+
+  <script src="js/bsod.js"></script>
+
+  <script type="text/javascript">function update_progress() {
+
+    $.ajax(
+      {
+        url: "https://api.amanoteam.com/getpercentage/",
+      }
+    ).done(function(data) {
+      document.getElementById('progress').innerHTML = data;
+    });
+    setTimeout(update_progress, 10000);
+}
+
+update_progress();</script>
+
+</html>
