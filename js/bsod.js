@@ -1,5 +1,5 @@
 var qrcode = new QRCode(document.getElementById("qrcode"), {
-	text: "https://geuntae.kr/discord",
+	text: "",
 	width: 110,
 	height: 110,
 	colorDark : "#106faa",
